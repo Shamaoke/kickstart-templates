@@ -2,7 +2,7 @@
 
 function main TRAPEXIT {
   cd {{ project_name }}/build-debug
-  cmake -G Ninja -B . -S ../source
+  cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja -B . -S ../source
   cmake --build .
   ln --symbolic --relative {{ project_name }} ../bin/
 }
