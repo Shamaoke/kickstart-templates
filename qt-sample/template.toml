@@ -1,0 +1,28 @@
+
+name = "qt-sample"
+description = "Qt sample template"
+kickstart_version = 1
+
+ignore = [
+  ".hooks"
+]
+
+post_gen_hooks = [
+  { name = "post_gen_hook", path = ".hooks/post_gen_hook" }
+]
+
+[[variables]]
+name = "project_group_name"
+default = ""
+prompt = "Specify the project group name"
+
+[[variables]]
+name = "project_name"
+default = "sample-0000"
+prompt = "Specify the project name"
+
+[[variables]]
+name = "project_description"
+default = "This is the {{ project_name | replace(from='-', to=' ') | capitalize }} project."
+prompt = "Describe the project"
+
