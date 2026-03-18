@@ -1,10 +1,15 @@
 #! /usr/bin/env zsh
 
 function main TRAPEXIT {
+
   cd {{ project_name }}/build-debug
-  cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja -B . -S ../source
-  # cmake --build .
-  # ln --symbolic --relative {{ project_name }} ../bin/
-  docker image build --tag {{ project_name }}:latest --file ../source/Dockerfile ../source
+
+  cmake -B . -S ../source --preset default-ninja
+  cmake --build .
+  ln --symbolic --relative {{ project_name }} ../bin/
+
+  cd ../source
+
+  docker image build --tag {{ project_name }}:latest --file Dockerfile .
 }
 
