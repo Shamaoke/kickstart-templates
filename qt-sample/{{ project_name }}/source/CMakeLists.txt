@@ -17,9 +17,9 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
 
 set(CMAKE_AUTOMOC ON)
 
-set(HEADERS include/sample.hh)
+set(HEADERS include/{{ project_name | snake_case }}.hh)
 
-set(SOURCES sample.cc main.cc)
+set(SOURCES {{ project_name | snake_case }}.cc main.cc)
 
 add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 
