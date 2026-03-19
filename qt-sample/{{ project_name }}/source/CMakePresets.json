@@ -12,6 +12,15 @@
       }
     },
     {
+      "name": "docker",
+      "displayName": "Docker configuration",
+      "description": "Docker build in the Release mode using the Ninja build tool.",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
       "name": "default-ninja",
       "inherits": "base",
       "displayName": "Default configuration with Ninja",
@@ -24,15 +33,6 @@
       "displayName": "Default configuration with Make",
       "description": "Default build in the Debug mode using the Make build tool.",
       "generator": "Unix Makefiles"
-    },
-    {
-      "name": "docker",
-      "displayName": "Docker configuration",
-      "description": "Docker build in the Release mode using the Ninja build tool.",
-      "generator": "Ninja",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
-      }
     }
   ]
 }

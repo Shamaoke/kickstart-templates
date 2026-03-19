@@ -4,11 +4,15 @@ description = "Qt sample template"
 kickstart_version = 1
 
 ignore = [
-  ".hooks"
+  ".kickstart"
+]
+
+pre_gen_hooks = [
+  { name = "pre_gen_hook", path = ".kickstart/hooks/pre_gen_hook" }
 ]
 
 post_gen_hooks = [
-  { name = "post_gen_hook", path = ".hooks/post_gen_hook" }
+  { name = "post_gen_hook", path = ".kickstart/hooks/post_gen_hook" }
 ]
 
 [[variables]]
