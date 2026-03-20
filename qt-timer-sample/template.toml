@@ -1,0 +1,42 @@
+
+name = "qt-timer-sample"
+description = "Qt timer sample template"
+kickstart_version = 1
+
+ignore = [
+  ".kicks"
+]
+
+pre_gen_hooks = [
+  { name = "pre_gen_hook", path = ".kicks/hooks/pre_gen_hook" }
+]
+
+post_gen_hooks = [
+  { name = "post_gen_hook", path = ".kicks/hooks/post_gen_hook" }
+]
+
+[[variables]]
+name = "project_name"
+default = "sample-0000"
+prompt = "Specify the project name"
+
+[[variables]]
+name = "title"
+default = "{{ project_name | replace(from='-', to=' ') | capitalize }}"
+derived = true
+
+[[variables]]
+name = "file_name"
+default = "{{ project_name | kebab_case }}"
+derived = true
+
+[[variables]]
+name = "class_name"
+default = "{{ project_name | upper_camel_case }}"
+derived = true
+
+[[variables]]
+name = "variable_name"
+default = "{{ project_name | camel_case }}"
+derived = true
+

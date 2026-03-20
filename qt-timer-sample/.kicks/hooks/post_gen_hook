@@ -1,0 +1,11 @@
+#! /usr/bin/env zsh
+
+function main TRAPEXIT {
+
+  cd {{ project_name }}/build-debug
+
+  cmake -B . -S ../source --preset default
+  cmake --build .
+  ln --symbolic --relative {{ project_name }} ../bin/
+}
+
